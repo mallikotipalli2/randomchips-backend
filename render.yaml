@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: randomchips-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: CORS_ORIGIN
+        value: https://randomchips.in,https://www.randomchips.in
